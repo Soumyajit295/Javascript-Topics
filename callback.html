@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <button id="click">Click me</button>
+    <script>
+        /* What is the callback functions in javascript */
+
+        /* when we take a function and passed into another function.The function which is passed into another function this is known as callback functions */
+
+        setTimeout(function(){
+            console.log("Timer")
+        },5000)
+
+        function x(y){
+            console.log("X")
+            y()
+        }
+        x(function y(){
+            console.log("Y")
+        })
+
+        // Here eventListener also use callback function which execute when anyone click on the button
+        
+        document.querySelector('#click').addEventListener('click',function(){
+            alert(`Button clicked!`)
+        })
+    </script>
+</body>
+</html>
